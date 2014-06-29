@@ -10,6 +10,6 @@
 							
 			</section><!-- end of #content -->
 <?
-	include('side_before_login.php');
+	include('pages/side_before_login.php');
 ?>
 	</section><!-- end of #main content and sidebar-->

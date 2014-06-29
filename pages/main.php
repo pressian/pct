@@ -24,9 +24,9 @@
 			
 <?
 	if ($_SESSION['pid']==null) {
-	 	include('side_before_login.php');		
+	 	include('include/side_before_login.php');		
 	} else {
-		include('side_after_login.php');
+		include('include/side_after_login.php');
 	}
 ?>
 	</section><!-- end of #main content and sidebar-->

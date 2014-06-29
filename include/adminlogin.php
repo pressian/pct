@@ -15,15 +15,19 @@
 	
 		if ($row==null) {
 			
-			include ('adminloginfail.php');		
+			mysqli_close($dblink);	
+			
+			include ('admin_login_fail.php');		
 			
 		} else {
+			
+			mysqli_close($dblink);	
 			
 			// 세션 생성
 			$_SESSION['paloginid'] = $id;
 			$_SESSION['padmincheck'] = "OK";			
 			
-			include ('adminfrontpage.php');
+			include ('admin_login_success.php');
 		}
 		
 		// 게시판 관리자 로그인 체크 페이지  -- 추후 구현

@@ -23,6 +23,9 @@
 		
 	// 환경 변수 셋팅
 	require_once("config.php");
+	
+	// 인클루드 경로 설정
+	set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 		
 	// 각 라이브러리 불러오기
     require_once("module/calendar.php");
@@ -67,11 +70,27 @@
 			$pass = $_POST['password'];
 			include('include/adminlogin.php'); 
 	 		break;
+		case "admin_login_fail":
+			include('include/admin_header.php');
+			include('pages/adminloginfail.php');
+			include('include/admin_footer.php');	
+			break;
 		case "admin_session_expired":
-			include('include/adminsessionexpired.php'); 
+			include('include/admin_header.php');
+			include('pages/adminsessionexpired.php'); 
+			include('include/admin_footer.php');	
  			break;
 		case "admin_dashboard":
-			include('include/adminfrontpage.php'); 
+			include('include/admin_session_check.php');
+			include('include/admin_header.php');
+			include('pages/adminfrontpage.php'); 
+			include('include/admin_footer.php');	
+			break;
+		case "admin_newboard":
+			include('include/admin_session_check.php');
+			include('include/admin_header.php');
+			include('pages/adminnewboard.php'); 
+			include('include/admin_footer.php');	
 			break;
 		default:
 			$year = $_POST['year'];

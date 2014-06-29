@@ -2,7 +2,7 @@
 	// login 여부 체크
 	if ($_SESSION['pid']==null) {
 		
-		include ('../include/noaccess.php');		
+		include ('include/noaccess.php');		
 	
 	} else {
 		
@@ -41,7 +41,7 @@
 			</section><!-- end of #content -->
 			
 <?
-		include('side_after_login.php');
+		include('pages/side_after_login.php');
 ?>
 	</section><!-- end of #main content and sidebar-->
 <?
