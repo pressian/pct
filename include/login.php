@@ -14,7 +14,8 @@
 		$dblink = mysqli_connect($dbserver, $dbuser, $dbpassword);
 
 		if (!$dblink) {
-			echo "DB Connection is failed.";
+			include ('db_connect_fail.php');
+			exit();	
 		}
 	
 		// Choose database

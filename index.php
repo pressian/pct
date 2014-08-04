@@ -35,6 +35,11 @@
 	
 	// 유저의 선택에 따라 다른 페이지 생성
 	switch ($mode) {
+		case "db_connect_fail":
+			include('include/admin_header.php');
+			include('pages/error_dbcon.php');
+			include('include/admin_footer.php');
+			break;	
 		case "login":
 			$id = $_POST['id'];
 			include('include/login.php'); 
@@ -42,7 +47,7 @@
 		case "login_fail":
 			include('include/header.php');
 			include('pages/login_fail.php');
-			include('include/footer.php');
+			include('inc동e/footer.php');
 	 		break;
 		case "logout":
 			include('include/logout.php'); 
@@ -75,6 +80,9 @@
 			include('pages/adminloginfail.php');
 			include('include/admin_footer.php');	
 			break;
+		case "admin_logout":
+			include('include/adminlogout.php');
+			break;
 		case "admin_session_expired":
 			include('include/admin_header.php');
 			include('pages/adminsessionexpired.php'); 
@@ -86,10 +94,45 @@
 			include('pages/adminfrontpage.php'); 
 			include('include/admin_footer.php');	
 			break;
+		case "membersearch_a":
+			include('include/admin_session_check.php');
+			include('include/membersearch.php');
+			include('include/admin_header.php');
+			include('pages/adminnewgroup.php'); 
+			include('include/admin_footer.php');	
+			break;
+		case "membersearch_g":
+			include('include/admin_session_check.php');
+			include('include/membersearch_g.php'); // 이 파일 작업할 차례
+			break;
 		case "admin_newboard":
 			include('include/admin_session_check.php');
 			include('include/admin_header.php');
 			include('pages/adminnewboard.php'); 
+			include('include/admin_footer.php');	
+			break;
+		case "admin_newgroup":
+			$legacy_groupname = "";
+			$legacy_intro = "";
+			$search_result = 2;
+			include('include/admin_session_check.php');
+			include('include/admin_header.php');
+			include('pages/adminnewgroup.php'); 
+			include('include/admin_footer.php');	
+			break;
+		case "make_group":
+			include('include/make_group.php');
+			break;
+		case "list_group":
+			include('include/admin_session_check.php');
+			include('include/admin_header.php');
+			include('pages/listgroup.php'); 
+			include('include/admin_footer.php');	
+			break;
+		case "view_group":
+			include('include/admin_session_check.php');
+			include('include/admin_header.php');
+			include('pages/viewgroup.php'); 
 			include('include/admin_footer.php');	
 			break;
 		default:

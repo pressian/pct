@@ -17,18 +17,67 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<script language = "JavaScript">
-	function dashboard(name) {
+	function logout() {
+		document.PCT.mode.value = "admin_logout";	
+		document.PCT.submit();		
+	}
+	function dashboard() {
 		document.PCT.mode.value = "admin_dashboard";	
 		document.PCT.submit();		
 	}
-	function newboard(name) {
+	function newboard() {
 		document.PCT.mode.value = "admin_newboard";	
 		document.PCT.submit();		
 	}
-	
+	function newgroup() {
+		document.PCT.mode.value = "admin_newgroup";	
+		document.PCT.submit();		
+	}
+	function listgroup() {
+		document.PCT.mode.value = "list_group";	
+		document.PCT.submit();				
+	}
+	function viewgroup(gid) {
+		document.PCT.mode.value = "view_group";
+		document.PCT.groupno.value = gid;
+		document.PCT.submit();		
+	}
+	function membersearch1() {
+		document.PCT.mode.value = "membersearch_a";	
+		document.PCT.submit();		
+	}
+	function membersearch2() {
+		document.PCT.mode.value = "membersearch_g";	
+		document.PCT.submit();				
+	}
+	function makegroup() {
+		if (document.PCT.groupname.value=="") {
+			alert("Group name is necessary.");
+			return false;
+		}
+		if (document.PCT.introduction.value=="") {
+			alert("Group introduction is necessary.");
+			return false;
+		}
+		if (document.PCT.adminid.value=="") {
+			alert("You must assign group administrator!");
+			return false;
+		} else {
+			document.PCT.mode.value = "make_group";	
+			document.PCT.submit();					
+		}
+	}	
 	</script>
 
 </head>
 <body>
+<? 
+	 if ( ($mode!="admin_newgroup") && ($mode!="membersearch_a") && ($mode!="view_group") ) {
+?>
 <form name="PCT" action="index.php" method="post">
 <input type="hidden" name="mode" value="">
+<input type="hidden" name="groupno" value="">
+
+<?
+	 }
+?>

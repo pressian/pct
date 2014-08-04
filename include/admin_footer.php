@@ -2,7 +2,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> This admin page used from <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <div class="span12"> Design Template : <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
         <div class="span12"> Powered by  <a href="http://xxxxx">열린프레시안</a>. </div>
 		
         <!-- /span12 --> 
@@ -146,6 +146,12 @@
         });
       });
     </script><!-- /Calendar -->
-</form>
+<? 
+	if ( ($mode!="admin_newgroup") && ($mode!="membersearch_a") && ($mode!="view_group") ) {
+?>
+	</form>
+<?
+	}
+?>
 </body>
 </html>

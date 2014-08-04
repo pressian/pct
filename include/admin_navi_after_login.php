@@ -8,7 +8,7 @@
                             class="icon-cog"></i> Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Change Password</a></li>
-              <li><a href="javascript:;">Logout</a></li>
+              <li><a href="javascript:logout();">Logout</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -38,13 +38,13 @@
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-list"></i><span>Boards</span> <b class="caret"></b></a> 
 			<ul class="dropdown-menu">
           		<li><a href="javascript:newboard()">Make a new bulletin board</a></li>
-          		<li><a href="list.html">View boards</a></li>
+          		<li><a href="">View boards</a></li>
         	</ul>		
 		</li>		
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-group"></i><span>Groups</span>  <b class="caret"></b></a> 
 			<ul class="dropdown-menu">
-      			<li><a href="newgroups.html">Make a new groups</a></li>
-      			<li><a href="list.html">View groups</a></li>
+      			<li><a href="javascript:newgroup()">Make a new groups</a></li>
+      			<li><a href="javascript:listgroup()">View groups</a></li>
     		</ul>		
 		</li>
         <li><a href="guidely.html"><i class="icon-calendar"></i><span>Schedule</span> </a></li>
